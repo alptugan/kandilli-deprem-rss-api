@@ -63,8 +63,8 @@ app.get("/last/:p", (req, res) => {
         });
 });
 
-app.listen(5555, () => {
-    console.log("Server started at port 5555");
+app.listen(8080, () => {
+    console.log("Server started at port 8080");
 });
 
 module.exports = app;

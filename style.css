@@ -1,0 +1,26 @@
+body {
+    /*font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;*/
+}
+
+input#themeToggle:checked ~ div > .dot {
+    transform: translateX(24px);
+}
+
+body,
+table,
+th,
+td {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #888;
+}

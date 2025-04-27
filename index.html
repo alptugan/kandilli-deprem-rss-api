@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kandilli Rasathanesi - Son Depremler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center p-4 transition-colors">
+    <div class="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-md rounded-lg p-8 space-y-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Kandilli Rasathanesi Son Depremler</h1>
+            <button id="themeButton" class=" dark:text-gray-300">
+                <i data-lucide="moon"></i>
+            </button>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col space-y-2">
+                <label for="region" class="text-gray-700 dark:text-gray-300 font-medium">Bölge:</label>
+                <select id="region"
+                    class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <option value="MARMARA">Marmara-İstanbul</option>
+                    <option value="ANKARA">Ankara</option>
+                    <option value="IZMIR">İzmir</option>
+                    <option value="CANAKKALE">Çanakkale</option>
+                    <option value="ESKISEHIR">Eskişehir</option>
+                    <option value="AKDENIZ">Akdeniz Bölgesi</option>
+                    <option value="EGE">Ege Bölgesi</option>
+                    <option disabled>__________________</option>
+                    <option value="ADIYAMAN">Adıyaman</option>
+                    <option value="AFYONKARAHISAR">Afyonkarahisar</option>
+                    <option value="AMASYA">Amasya</option>
+                    <option value="AYDIN">Aydın</option>
+                    <option value="BALIKESIR">Balıkesir</option>
+                    <option value="BITLIS">Bitlis</option>
+                    <option value="BURDUR">Burdur</option>
+                    <option value="ELAZIG">Elazığ</option>
+                    <option value="HATAY">Hatay</option>
+                    <option value="KUTAHYA">Kütahya</option>
+                    <option value="KAHRAMANMARAS">Kahramanmaraş</option>
+                    <option value="KARS">Kars</option>
+                    <option value="KAYSERI">Kayseri</option>
+                    <option value="KONYA">Konya</option>
+                    <option value="MALATYA">Malatya</option>
+                    <option value="MANISA">Manisa</option>
+                    <option value="MERSIN">Mersin</option>
+                    <option value="MUGLA">Muğla</option>
+                    <option value="SIVAS">Sivas</option>
+                    <option value="DENIZLI">Denizli</option>
+                    <option disabled>---- Ülkeler ----</option>
+                    <option value="BULGARISTAN">Bulgaristan</option>
+                    <option value="YUNANISTAN">Yunanistan</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label for="count" class="text-gray-700 dark:text-gray-300 font-medium">Gösterilecek Kayıt
+                    Sayısı:</label>
+                <select id="count"
+                    class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                    <option value="200">200</option>
+                    <option value="250">250</option>
+                    <option value="300">300</option>
+                    <option value="350">350</option>
+                    <option value="400">400</option>
+                    <option value="450">450</option>
+                    <option value="500">500</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <button id="getEarthquakes"
+                class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700">
+                Göster
+            </button>
+        </div>
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table id="earthquakeTable" class="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400
+                                              text-xs sm:text-sm md:text-base">
+                <thead
+                    class="text-xs sm:text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-2 py-3 sm:px-6">TARİH</th>
+                        <th scope="col" class="px-2 py-3 sm:px-6">Saat</th>
+                        <th scope="col" class="px-2 py-3 sm:px-6">MAGNİTÜT</th>
+                        <th scope="col" class="px-2 py-3 sm:px-6">Bölge</th>
+                        <th scope="col" class="px-2 py-3 sm:px-6">DERİNLİK</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+
+            </table>
+        </div>
+
+        <footer class="text-center text-gray-500 dark:text-gray-400 text-sm pt-6">
+            <p>Bu sayfadaki deprem verileri <a href="http://www.koeri.boun.edu.tr/scripts/lst0.asp">Kandilli
+                    Rasathanesi</a> sayfasından çekilerek gösterilmektedir. Ticari kullanımı yasaktır. Bu servis <a
+                    class="text-blue-700 italic" href="https://www.alptugan.com">Alp Tuğan</a> tarafından
+                geliştirilmiştir.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const themeButton = document.getElementById('themeButton');
+
+        function updateIcon() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeButton.innerHTML = '<i data-lucide="sun"></i>';
+            } else {
+                themeButton.innerHTML = '<i data-lucide="moon"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        themeButton.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            updateIcon();
+        });
+
+        // initialize the correct icon on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateIcon();
+        });
+    </script>
+
+</body>
+
+</html>

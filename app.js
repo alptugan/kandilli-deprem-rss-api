@@ -33,26 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const timeCell = row.insertCell();
             const magnitudeCell = row.insertCell();
             const locationCell = row.insertCell();
-            const depthCell = row.insertCell();
-
-            // Apply cell styling
-            /*dateCell.className = "px-6 py-4 font-medium text-gray-900 dark:text-white";
-            timeCell.className = "px-6 py-4";
-            magnitudeCell.className = "px-6 py-4";
-            locationCell.className = "px-6 py-4";
-            depthCell.className = "px-6 py-4";*/
+            //const depthCell = row.insertCell();
 
             dateCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-edium text-gray-900 dark:text-white";
             timeCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4";
             magnitudeCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4";
             locationCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4";
-            depthCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4";
+            //depthCell.className = "px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4";
 
             dateCell.textContent = earthquake.date;
             timeCell.textContent = earthquake.time;
             magnitudeCell.textContent = earthquake.magnitude;
             locationCell.textContent = earthquake.region;
-            depthCell.textContent = earthquake.depth;
+            //depthCell.textContent = earthquake.depth;
         });
     }
 

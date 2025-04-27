@@ -22,7 +22,7 @@ const selectDetails = (text) => {
 app.get("/last/:p", (req, res) => {
     const region = req.query.region;
     axios
-        .get("http://koeri.boun.edu.tr/rss/")
+        .get("http://www.koeri.boun.edu.tr/rss/")
         .then(function (response) {
             // handle success
             parseString(response.data, function (err, result) {
@@ -30,6 +30,8 @@ app.get("/last/:p", (req, res) => {
                 let earthquakeList = [];
                 let filteredEarthquakeList = [];
 
+                //console.table(earthquakeList);
+                //console.table(filteredEarthquakeList);
                 for (i = 0; i < list.length; i++) {
                     const city = selectCity(list[i].title[0]);
                     const details = selectDetails(list[i].description[0]);
@@ -42,7 +44,7 @@ app.get("/last/:p", (req, res) => {
                         scale: details[3],
                         lat: details[4],
                         long: details[5],
-                        depth: details[6],
+                        //depth: details[6],
                     };
                     if (!region || city.includes(region)) {
                         filteredEarthquakeList.push(item);

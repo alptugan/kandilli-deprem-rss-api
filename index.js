@@ -3,6 +3,10 @@ var parseString = require("xml2js").parseString;
 const axios = require("axios").default;
 const app = express();
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Kandilli Earthquake RSS API");
+});
+
 const selectCity = (text) => {
     let myCity = text.split(" ");
     myCity.splice(0, 2);

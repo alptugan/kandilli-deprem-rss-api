@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function getEarthquakes(region, count) {
         // Replace with your actual API endpoint
-        const apiUrl = `https://kandilli-deprem-rss-api.vercel.app:8080/last/${count}?region=${region}`;
-        //  const apiUrl = `http://localhost:5555/last/${count}?region=${region}`;
+        const apiUrl = `https://kandilli-deprem-rss-api.vercel.app/last/${count}?region=${region}`;
+        //const apiUrl = `http://localhost:8080/last/${count}?region=${region}`;
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();

@@ -1,5 +1,5 @@
 # Kandilli Rasathanesi Son 500 Deprem
-## Introduction
+## Giriş (Introduction)
 Sayfayı ziyaret etmek için [Önyüz / Frontend](https://alptugan.github.io/kandilli-deprem-rss-api/) adresi.
 Kısaltılmış alan adı: [https://tin.al/deprem](https://tin.al/deprem)
 
@@ -10,6 +10,8 @@ Kandilli Rasathanesi Veri Görselleştirme sayfası. Bu uygulamanın birincil am
 Güncel veri ancak Kandilli Rasathanesi veriyi yayınladığında erişilebilir. 
 Bant genişliği ve kaynak sağlayıcı herhangi bir şekilde engellemediği sürece aktif olarak geliştirilmeye devam edilecektir.
 
+> [!WARNING]
+> Bant genişliği sınırlamaları yüzünden sayfa kendisini güncellememktedir. Kullanıcılar sayfayı yinileyerek güncel bilgilere ulaşmalıdır.
 
 ## Yerel Kurulum
 1. Kaynağı Github'dan indirin;
@@ -41,7 +43,7 @@ const apiUrl = `http://localhost:8080/last/${count}?region=${region}`;
 
 
 ## Sorunlar
-1. Deprem derinlik bilgisi kaynak erişimindeki RSS formatlandırılmasından dolayı eksik geldiği için şu anda görüntüleme dışı tutulmuştur.
+1. Deprem derinlik bilgisi kaynak erişimindeki RSS formatlandırılmasından dolayı eksik geldiği için şu anda görüntüleme dışı tutulmuştur. Konuyla ilgili kuruma bilgilendirme yapıldı.
 
 
 ## Yapılacaklar (Todo)
@@ -54,3 +56,5 @@ const apiUrl = `http://localhost:8080/last/${count}?region=${region}`;
 - [ ] .env kurulumu
 - [ ] API yollarının tanımlanması. Bu kısım geliştiriciler ve tasarımcılarla beraber çalışılacaktır. 
 - [ ] Jeofizik ve Jeoloji uzmanlarından görüş topla.
+- [ ] Kaynak kod bağlantı linki icon olarak tema kısmına yerleştirilebilir.
+- [ ] Günlük deprem sayısını seçilen bölgeye göre göster (Şimdilik sadece istanbul istatistiğini tutalım).

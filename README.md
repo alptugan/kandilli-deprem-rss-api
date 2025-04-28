@@ -1,8 +1,9 @@
 # Kandilli Rasathanesi Son 500 Deprem
 ## Introduction
 Sayfayı ziyaret etmek için [Önyüz / Frontend](https://alptugan.github.io/kandilli-deprem-rss-api/) adresi.
+Kısaltılmış alan adı: [https://tin.al/deprem](https://tin.al/deprem)
 
-The following app collects & parses the earthquake data for only regions of Trükiye from [Boğaziçi University](http://www.koeri.boun.edu.tr/scripts/lst0.asp) Kandilli Observatory RSS hyperlink. For now the frontend is in Turkish, so the rest of the documentation will be in Turkish.
+The following app collects & parses the earthquake data for only regions of Türkiye from [Boğaziçi University](http://www.koeri.boun.edu.tr/scripts/lst0.asp) Kandilli Observatory RSS hyperlink. For now the frontend is in Turkish, so the rest of the documentation will be in Turkish.
 
 Kandilli Rasathanesi Veri Görselleştirme sayfası. Bu uygulamanın birincil amacı verileri ve bölgesel olarak deprem sorgusunu yapmayı kullanıcılar için daha anlaşışabilir şekilde sağlamaktır. Öte yandan tasarımsal ve kullanıcı deneyimini farklı ifade biçimleri kullanarak zenginleştirmeyi amaçlamaktadır. Bir uygulama programlama arayüzünden (API) ziyade, Türkiye sınırları dahilinde son yayınlanan 500 depremin verisini bölge ve sayı bazlı filtreleyerek göstermeyi hedeflemektedir. Arkayüz (Backend) [Vercel](https://vercel.com) servisinde ücretsiz sağlanan hesap üzerinde koşmaktadır. 
 

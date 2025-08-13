@@ -13,7 +13,7 @@ Bant genişliği ve kaynak sağlayıcı herhangi bir şekilde engellemediği sü
 > [!WARNING]
 > Bant genişliği sınırlamaları yüzünden sayfa kendisini güncellememktedir. Kullanıcılar sayfayı yinileyerek güncel bilgilere ulaşmalıdır.
 
-## Yerel Kurulum
+## Yerel Kurulum ve Kullanım
 1. Kaynağı Github'dan indirin;
 `git clone https://github.com/alptugan/kandilli-deprem-rss-api.git`
 
